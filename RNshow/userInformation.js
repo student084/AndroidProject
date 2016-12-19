@@ -40,7 +40,10 @@ export default class UserInforShow extends React.Component{
      }
     render(){
         return (
-        <View><View>
+        //container
+        <View>
+        <View></View>
+        <View>
         );
     }
 }
