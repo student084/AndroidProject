@@ -25,40 +25,62 @@ import {
   TextInput,
   Button,
   Alert,
+  Navigator
 } from 'react-native';
 const submit = () =>{
     Alert.alert('App is building ...');
 };
 // Home page view
-export default class RNshow extends Component {
+class RNshow extends Component {
   render() {
+    let defaultComponent = HomeView;
     return (
-    //container
-    <View style={homeStyles.container}>
-     <View style={homeStyles.headPicBox}>
-        <View></View>
-     </View>
-     <View style={homeStyles.inputsBox}>
-        <View><TextInput/></View>
-        <View><TextInput/></View>
-     </View>
-     <View style={homeStyles.buttonsBox}>
-        <View>
-        <Button
-        title="登录"
-         onPress={submit}
-         /></View>
-     </View>
-     <View style={homeStyles.linksBox}>
-        <View><Text>忘记密码？</Text></View>
-        <View><Text>新用户注册</Text></View>
-     </View>
-     <View style={homeStyles.bottomBox}>
-        <View><Text>student0</Text></View>
-     </View>
-     </View>
+    <Navigator
+        initialRoute = {{component: defaultComponent}}
+        configureScene={(route)=>{
+        return Navigator.SceneConfigs.VerticalDownSwipeJump;
+        }
+        }
+        renderScene={(route, navigator) => {
+            let Component = route.component;
+            return <Component{...route.params} navigator={navigator}/>
+        }
+        }
+    />
     );
   }
+}
+
+export default class HomeView extends Component{
+
+    render(){
+        return(
+            //container
+                <View style={homeStyles.container}>
+                 <View style={homeStyles.headPicBox}>
+                    <View></View>
+                 </View>
+                 <View style={homeStyles.inputsBox}>
+                    <View><TextInput/></View>
+                    <View><TextInput/></View>
+                 </View>
+                 <View style={homeStyles.buttonsBox}>
+                    <View>
+                    <Button
+                    title="登录"
+                     onPress={submit}
+                     /></View>
+                 </View>
+                 <View style={homeStyles.linksBox}>
+                    <View><Text>忘记密码？</Text></View>
+                    <View><Text>新用户注册</Text></View>
+                 </View>
+                 <View style={homeStyles.bottomBox}>
+                    <View><Text>student0</Text></View>
+                 </View>
+                 </View>
+        );
+    }
 }
 //get window size
 var Dimensions=require('Dimensions');

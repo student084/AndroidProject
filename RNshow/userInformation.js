@@ -42,7 +42,8 @@ export default class UserInforShow extends React.Component{
         return (
         //container
         <View>
-        <View></View>
+        <View><Text>用户名：</Text></View>
+        <View><Text>用户密码：</Text></View>
         <View>
         );
     }
