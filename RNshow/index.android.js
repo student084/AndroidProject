@@ -3,51 +3,113 @@
  * https://github.com/facebook/react-native
  * @flow
  */
-
+/*
+******************************************************************************
+*Copyright(c).
+*Allrightsreserved.
+*
+*File       $Filename:.index.android.js
+*Author     $Author:student0$
+*Version    $Revision:0.0.1$
+*Date       $Date:2016/12/19 14:15$
+*Description
+    $ProjectName:RNshow
+******************************************************************************
+*/
 import React, { Component } from 'react';
 import {
   AppRegistry,
   StyleSheet,
   Text,
-  View
+  View,
+  TextInput,
+  Button,
+  Alert,
 } from 'react-native';
-
+const submit = () =>{
+    Alert.alert('App is building ...');
+};
+// Home page view
 export default class RNshow extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.android.js
-        </Text>
-        <Text style={styles.instructions}>
-          Double tap R on your keyboard to reload,{'\n'}
-          Shake or press menu button for dev menu
-        </Text>
-      </View>
+    //container
+    <View style={homeStyles.container}>
+     <View style={homeStyles.headPicBox}>
+        <View></View>
+     </View>
+     <View style={homeStyles.inputsBox}>
+        <View><TextInput/></View>
+        <View><TextInput/></View>
+     </View>
+     <View style={homeStyles.buttonsBox}>
+        <View>
+        <Button
+        title="登录"
+         onPress={submit}
+         /></View>
+     </View>
+     <View style={homeStyles.linksBox}>
+        <View><Text>忘记密码？</Text></View>
+        <View><Text>新用户注册</Text></View>
+     </View>
+     <View style={homeStyles.bottomBox}>
+        <View><Text>student0</Text></View>
+     </View>
+     </View>
     );
   }
 }
-
-const styles = StyleSheet.create({
+//get window size
+var Dimensions=require('Dimensions');
+var ScreenWidth=Dimensions.get('window').width;
+var ScreenHeight=Dimensions.get('window').height;
+var ScreenScale=Dimensions.get('window').scale;
+homeStyles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
+    //主轴为竖直
+    flexDirection: 'column',
+    //从主轴开始部位开始布局
+    justifyContent: 'flex-start',
+    //布局整体内部中对齐
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
+  headPicBox:{
+    height: 3 * ScreenHeight/10,
+    width:  ScreenWidth,
+    backgroundColor: '#fff0f5',
   },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
+  inputsBox:{
+    height: 2 * ScreenHeight/10,
+    width: ScreenWidth,
+    backgroundColor: '#add8e6',
   },
+  buttonsBox:{
+    height: ScreenHeight/10,
+    width:  ScreenWidth,
+    flexDirection: 'column',
+    justifyContent: 'center',
+    backgroundColor: '#e0ffff',
+  },
+  linksBox:{
+    height: ScreenHeight/10,
+    width:  ScreenWidth,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    backgroundColor: '#fafad2',
+  },
+  bottomBox:{
+    height: 3 * ScreenHeight/10,
+    width:  ScreenWidth,
+    justifyContent: 'flex-end',
+    backgroundColor: '#b0c4de',
+  },
+   inputTxt:{
+
+   }
 });
 
 AppRegistry.registerComponent('RNshow', () => RNshow);
