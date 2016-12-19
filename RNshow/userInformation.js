@@ -21,6 +21,7 @@ import {
   StyleSheet,
   Text,
   View,
+  TouchableHighlight,
 } from 'react-native';
 // the view for showing the information of users, which has been input at indexPage
 export default class UserInformation extends React.Component{
@@ -38,10 +39,17 @@ export default class UserInformation extends React.Component{
             passWord: this.props.passWord,
         });
      }
+     _back = () => {
+        const { navigator } = this.props;
+        if(navigator){
+            navigator.pop();
+        }
+     }
     render(){
         return (
         //container
         <View>
+        <TouchableHighlight onPress={this._back.bind(this)}><Text> touch me to back</Text></TouchableHighlight>
         <View><Text>用户名：{ JSON.stringify(this.state.userName) }</Text></View>
         <View><Text>用户密码：{ JSON.stringify(this.state.passWord) }</Text></View>
         </View>

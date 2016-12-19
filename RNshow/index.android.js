@@ -101,7 +101,7 @@ export default class HomeView extends Component{
         this._loginSuccess();
     }
 
-    _loginSuccess(){
+    _loginSuccess = () => {
         const { navigator } = this.props;
         if (navigator) {
            navigator.push({
