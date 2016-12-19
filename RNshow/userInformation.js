@@ -23,12 +23,12 @@ import {
   View,
 } from 'react-native';
 // the view for showing the information of users, which has been input at indexPage
-export default class UserInforShow extends React.Component{
+export default class UserInformation extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            userName: null,
-            passWord: null,
+            userName: "",
+            passWord: "",
         };
         }
      // Get data after mount
@@ -42,9 +42,9 @@ export default class UserInforShow extends React.Component{
         return (
         //container
         <View>
-        <View><Text>用户名：</Text></View>
-        <View><Text>用户密码：</Text></View>
-        <View>
+        <View><Text>用户名：{ JSON.stringify(this.state.userName) }</Text></View>
+        <View><Text>用户密码：{ JSON.stringify(this.state.passWord) }</Text></View>
+        </View>
         );
     }
 }

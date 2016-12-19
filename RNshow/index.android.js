@@ -27,6 +27,8 @@ import {
   Alert,
   Navigator
 } from 'react-native';
+
+import UserInformation from './UserInformation';
 const submit = () =>{
     Alert.alert('App is building ...');
 };
@@ -52,7 +54,13 @@ class RNshow extends Component {
 }
 
 export default class HomeView extends Component{
-
+    constructor(props){
+        super(props);
+        this.state = {
+            userName : "",
+            passWord : "",
+        }
+    }
     render(){
         return(
             //container
@@ -61,14 +69,22 @@ export default class HomeView extends Component{
                     <View></View>
                  </View>
                  <View style={homeStyles.inputsBox}>
-                    <View><TextInput/></View>
-                    <View><TextInput/></View>
+                    <View><TextInput onChangeText={
+                        (text) => {
+                        this.state.userName = text;
+                        }
+                    }/></View>
+                    <View><TextInput onChangeText={
+                        (text) => {
+                        this.state.passWord = text;
+                         }
+                    }/></View>
                  </View>
                  <View style={homeStyles.buttonsBox}>
                     <View>
                     <Button
                     title="登录"
-                     onPress={submit}
+                     onPress={this._onPressSubmit.bind(this)}
                      /></View>
                  </View>
                  <View style={homeStyles.linksBox}>
@@ -80,6 +96,22 @@ export default class HomeView extends Component{
                  </View>
                  </View>
         );
+    }
+    _onPressSubmit = () => {
+        this._loginSuccess();
+    }
+
+    _loginSuccess(){
+        const { navigator } = this.props;
+        if (navigator) {
+           navigator.push({
+            component: UserInformation,
+            params: {
+                userName: this.state.userName,
+                passWord: this.state.passWord,
+            }
+           });
+        }
     }
 }
 //get window size
