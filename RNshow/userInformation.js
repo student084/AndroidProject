@@ -21,7 +21,6 @@ import {
   StyleSheet,
   Text,
   View,
-  
 } from 'react-native';
 // the view for showing the information of users, which has been input at indexPage
 export default class UserInforShow extends React.Component{
