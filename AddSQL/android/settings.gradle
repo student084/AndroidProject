@@ -1,0 +1,3 @@
+rootProject.name = 'AddSQL'
+
+include ':app'
