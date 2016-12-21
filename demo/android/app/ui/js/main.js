@@ -19,6 +19,8 @@ import {
 	Text,
 	Navigator,
 	DrawerLayoutAndroid,
+	StyleSheet,
+	Image,
 }from 'react-native';
 import Drawer from './drawer';
 
@@ -38,32 +40,54 @@ export default class MainPage extends React.Component {
 	}
 
 	render(){
-		let navigationView = (
-		<View style={{flex: 1, alignItems: 'center'}}>
-          <Text style={{margin: 10, fontSize: 15, textAlign: 'right'}}>Frist list</Text>
-          <Text style={{margin: 10, fontSize: 15, textAlign: 'right'}}>Second list</Text>
-          <Text style={{margin: 10, fontSize: 15, textAlign: 'right'}}>Thrid list</Text>
-          <Text style={{margin: 10, fontSize: 15, textAlign: 'right'}}>Fouth list</Text>
-        </View>
-          );
 		return(
 		<DrawerLayoutAndroid
-	      drawerWidth={300}
+	      drawerWidth={260}
 	      drawerPosition={DrawerLayoutAndroid.positions.Left}
-	      renderNavigationView={() => navigationView}>
-	    	<View style={{flex: 1, backgroundColor: '#fff'}}>
-	      	<Text style={{margin: 10, fontSize: 15, textAlign: 'left'}}>Welcom to Drawer!</Text>
+	      renderNavigationView={this._showDrawer}>
+	    	<View style={{flex: 1}}>
+	      	<RenderContent/>
 	    	</View>
 	    </DrawerLayoutAndroid>
 			);
 	}
 
 	_showDrawer = () =>{
-		const {navigator} = this.props;
-		if(navigator){
-			navigator.push({
-				component: Drawer,
-			});
-		}
+		return(<LeftListMenu/>);
 	}
 }
+
+class LeftListMenu extends Component{
+	render(){
+		return(
+		<View style={{flex: 1,  alignItems: 'flex-start'}}>
+			<View style={{margin: 20,flex: 1, alignItems: 'flex-start'}}>
+			<Image style={mainCss.userImg} 
+                    source={require('../img/student0.png')}
+                    />
+			</View>
+			<View style={{flex: 3,  alignItems: 'flex-start'}}>
+          		<Text style={{margin: 50, fontSize: 15, textAlign: 'right'}}></Text>
+          		<Text style={{margin: 50, fontSize: 15, textAlign: 'right'}}>Second list</Text>
+          		<Text style={{margin: 50, fontSize: 15, textAlign: 'right'}}>Thrid list</Text>
+          		<Text style={{margin: 50, fontSize: 15, textAlign: 'right'}}>Fouth list</Text>
+			</View>
+		</View>
+		);
+	}
+}
+class RenderContent extends Component{
+	render(){
+		return(<View><Text>this is drawer</Text></View>);
+	}
+}
+
+mainCss = StyleSheet.create({
+	userImg:{
+    borderRadius:40,  
+    height:80,  
+    width:80,  
+    marginTop:40,  
+    alignSelf:'center',
+  }
+});
