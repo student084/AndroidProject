@@ -5,6 +5,7 @@ import {
   View,
   TextInput,
   Button,
+  Image,
 } from 'react-native';
 
 export default class Login extends Component{
@@ -20,11 +21,13 @@ export default class Login extends Component{
             //container
                 <View style={loginStyles.container}>
                  <View style={loginStyles.headPicBox}>
-                    <View></View>
+                    <Image style={loginStyles.userImg} 
+                    source={require('../img/student0.png')}
+                    />
                  </View>
                  <View style={loginStyles.inputsBox}>
-                    <View
-                    ><TextInput onChangeText={
+                    <View>
+                    <TextInput onChangeText={
                         (text) => {
                         this.state.userName = text;
                         }
@@ -47,14 +50,16 @@ export default class Login extends Component{
                     <Button
                     title="登录"
                      onPress={this._onPressSubmit.bind(this)}
+                      style={loginStyles.btn}
                      /></View>
                  </View>
                  <View style={loginStyles.linksBox}>
                     <View><Text style={loginStyles.linkWord}>忘记密码？</Text></View>
-                    <View><Text>新用户注册</Text></View>
+                    <View><Text style={loginStyles.linkWord}>新用户注册</Text></View>
                  </View>
                  <View style={loginStyles.bottomBox}>
-                    <View><Text>student0</Text></View>
+                    <Text>Copyright © 2016 student0</Text>
+                    <Text>All rights reserved</Text>
                  </View>
                  </View>
         );
@@ -100,14 +105,16 @@ loginStyles = StyleSheet.create({
   inputsBox:{
     height: 14 * ScreenHeight/90,
     width: ScreenWidth,
-    backgroundColor: '#add8e6',
+    backgroundColor: 'aliceblue',
   },
   buttonsBox:{
     height: 11 * ScreenHeight/90,
     width:  495 * ScreenWidth/ 540,
     flexDirection: 'column',
     justifyContent: 'center',
-    backgroundColor: 'dodgerblue',
+  },
+  btn:{
+     borderRadius: 20,
   },
   linksBox:{
     height: 3 * ScreenHeight/90,
@@ -118,18 +125,29 @@ loginStyles = StyleSheet.create({
     backgroundColor: 'lavender',
   },
   bottomBox:{
-    height: 36 * ScreenHeight/90,
+    height: 30 * ScreenHeight/90,
     width:  ScreenWidth,
+    flexDirection: 'column',
     justifyContent: 'flex-end',
+    alignItems: 'center',
     backgroundColor: 'lavender',
   },
   inputBox:{
+    borderBottomColor: 'aliceblue',
     borderWidth: 0,
+    borderBottomWidth: 0,
   },
   passWordInputBox:{
     
   },
   linkWord:{
     color: 'dodgerblue',
+  },
+  userImg:{
+    borderRadius:40,  
+    height:80,  
+    width:80,  
+    marginTop:40,  
+    alignSelf:'center',
   }
 });
