@@ -1,14 +1,18 @@
 import React, { Component } from 'react';
 import {
+  Navigator,
   StyleSheet,
   Text,
   View,
   TextInput,
   Button,
   Image,
+  DrawerLayoutAndroid,
 } from 'react-native';
 
-export default class Login extends Component{
+import MainPage from './main';
+
+export default class Login extends React.Component{
     constructor(props){
         super(props);
         this.state = {
@@ -69,23 +73,23 @@ export default class Login extends Component{
     }
 
     _loginSuccess = () => {
-        // const { navigator } = this.props;
-        // if (navigator) {
-        //    navigator.push({
-        //     component: UserInformation,
-        //     params: {
-        //         userName: this.state.userName,
-        //         passWord: this.state.passWord,
-        //     }
-        //    });
-        // }
+        const { navigator } = this.props;
+        if (navigator) {
+           navigator.replace({
+            component: MainPage,
+            params: {
+                userName: this.state.userName,
+                passWord: this.state.passWord,
+            }
+           });
+        }
     }
 }
 //get window size
-var Dimensions=require('Dimensions');
-var ScreenWidth=Dimensions.get('window').width;
-var ScreenHeight=Dimensions.get('window').height;
-var ScreenScale=Dimensions.get('window').scale;
+let Dimensions=require('Dimensions');
+let ScreenWidth=Dimensions.get('window').width;
+let ScreenHeight=Dimensions.get('window').height;
+let ScreenScale=Dimensions.get('window').scale;
 loginStyles = StyleSheet.create({
   container: {
     flex: 1,
