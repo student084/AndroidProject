@@ -18,4 +18,5 @@
 <li><a href="https://github.com/student084/AndroidProject/tree/master/addSence">简易场景之间的跳转及数据传输</a></li>
 <li><a href="https://github.com/student084/AndroidProject/tree/master/RNshow">简单的本地登陆及跳转</a></li>
 <li>进阶篇，学习中。。。。</li>
+<li><a  href="https://github.com/student084/AndroidProject/tree/master/demo>侧滑栏的显示，包含点击显示和滑动显示</a></li>
 </ul>
