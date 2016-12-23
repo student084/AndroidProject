@@ -28,6 +28,7 @@ export default class MainPage extends React.Component {
 	constructor(props){
 		super(props);
 		this.state = {
+			drawer: null,
 			userName: "",
 		};
 	}
@@ -38,21 +39,29 @@ export default class MainPage extends React.Component {
 			userName: this.props.userName,
 		});
 	}
-
 	render(){
 		return(
 		<DrawerLayoutAndroid
-	      drawerWidth={260}
+	      drawerWidth={200}
 	      drawerPosition={DrawerLayoutAndroid.positions.Left}
-	      renderNavigationView={this._showDrawer}>
+	      ref={(drawer) => { this.drawer = drawer; }}
+	      renderNavigationView={this._drawer}>
 	    	<View style={{flex: 1}}>
+	    	<View>
 	      	<RenderContent/>
+	      	</View>
+	      	<View>
+	      	<Text onPress={this._showDrawerMenu.bind(this)}>Press to Menu</Text>
+	      	</View>
 	    	</View>
 	    </DrawerLayoutAndroid>
 			);
 	}
-
-	_showDrawer = () =>{
+	_showDrawerMenu = () => {
+		this.drawer.openDrawer();
+	}
+	//return the Drawer's view by a function
+	_drawer = () =>{
 		return(<LeftListMenu/>);
 	}
 }
@@ -61,26 +70,31 @@ class LeftListMenu extends Component{
 	render(){
 		return(
 		<View style={{flex: 1,  alignItems: 'flex-start'}}>
-			<View style={{margin: 20,flex: 1, alignItems: 'flex-start'}}>
+			<View style={{margin: 15, flex: 1, alignItems: 'flex-start'}}>
 			<Image style={mainCss.userImg} 
                     source={require('../img/student0.png')}
                     />
 			</View>
-			<View style={{flex: 3,  alignItems: 'flex-start'}}>
-          		<Text style={{margin: 50, fontSize: 15, textAlign: 'right'}}></Text>
-          		<Text style={{margin: 50, fontSize: 15, textAlign: 'right'}}>Second list</Text>
-          		<Text style={{margin: 50, fontSize: 15, textAlign: 'right'}}>Thrid list</Text>
-          		<Text style={{margin: 50, fontSize: 15, textAlign: 'right'}}>Fouth list</Text>
+			<View style={{flex: 4, alignItems: 'flex-start'}}>
+          		<Text style={{margin: 10, fontSize: 15, textAlign: 'right'}}>选项一</Text>
+          		<Text style={{margin: 10, fontSize: 15, textAlign: 'right'}}>选项二</Text>
+          		<Text style={{margin: 10, fontSize: 15, textAlign: 'right'}}>选项三</Text>
+          		<Text style={{margin: 10, fontSize: 15, textAlign: 'right'}}>选项四</Text>
 			</View>
 		</View>
 		);
 	}
 }
+
 class RenderContent extends Component{
 	render(){
 		return(<View><Text>this is drawer</Text></View>);
 	}
 }
+
+renderContentCss = StyleSheet.create({
+
+});
 
 mainCss = StyleSheet.create({
 	userImg:{
