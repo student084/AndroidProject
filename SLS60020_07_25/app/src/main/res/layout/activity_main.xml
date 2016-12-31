@@ -1,0 +1,767 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity"
+    android:background="#fff2f2f2"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:padding="0dp">
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="false"
+        android:background="#fff2f2f2"
+        android:padding="0dp">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="1"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:padding="0dp">
+
+                <FrameLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#ffbebebe">
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#ffc5c5c5">
+
+                        <ImageView
+                            android:layout_width="55dp"
+                            android:layout_height="30dp"
+                            android:id="@+id/imageView"
+                            android:src="@mipmap/home_logo_company"
+                            android:background="#ffc5c5c5" />
+
+                        <TextView
+                            android:layout_width="250dp"
+                            android:layout_height="wrap_content"
+                            android:text="流水账"
+                            android:id="@+id/textView"
+                            android:gravity="center"
+                            android:textSize="16dp"
+                            android:paddingTop="5dp"
+                            android:paddingBottom="8dp"
+                            android:background="#ffc5c5c5" />
+
+                        <FrameLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:foreground="@mipmap/home_logo_menu">
+
+                            <Button
+                                android:layout_width="50dp"
+                                android:layout_height="fill_parent"
+                                android:id="@+id/menu"
+                                android:background="#ffc5c5c5" />
+                        </FrameLayout>
+
+                    </LinearLayout>
+
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/imageView3"
+                        android:src="@mipmap/home_shadow_line" />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:text="     日期"
+                        android:id="@+id/hp_date_input"
+                        android:gravity="center"
+                        android:layout_gravity="left|center"
+                        android:textSize="12dp" />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="2dp"
+                    android:paddingLeft="5dp">
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:weightSum="1"
+                        android:paddingTop="3dp">
+
+                        <FrameLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center">
+
+                                <FrameLayout
+                                    android:layout_width="40dp"
+                                    android:layout_height="35dp">
+
+                                    <Button
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="fill_parent"
+                                        android:text=" "
+                                        android:id="@+id/sub_one_day"
+                                        android:layout_gravity="center"
+                                        android:gravity="center"
+                                        android:background="@mipmap/home_sub_one_day" />
+                                </FrameLayout>
+
+                                <FrameLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:paddingLeft="5dp"
+                                    android:paddingRight="5dp">
+
+                                    <EditText
+                                        android:layout_width="140dp"
+                                        android:layout_height="35dp"
+                                        android:inputType="date"
+                                        android:ems="10"
+                                        android:id="@+id/home_input_date"
+                                        android:textSize="14dp"
+                                        android:singleLine="true"
+                                        android:background="#fffffff0"
+                                        android:layout_gravity="center"
+                                        android:gravity="center"
+                                        android:enabled="false"
+                                        android:focusable="true"
+                                        android:textColor="#c7080808"
+                                        android:maxLength="10" />
+
+                                </FrameLayout>
+
+                                <FrameLayout
+                                    android:layout_width="40dp"
+                                    android:layout_height="35dp">
+
+                                    <Button
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="fill_parent"
+                                        android:text=" "
+                                        android:id="@+id/add_one_day"
+                                        android:background="@mipmap/home_add_one_day" />
+                                </FrameLayout>
+
+                            </LinearLayout>
+                        </FrameLayout>
+
+                        <FrameLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent">
+
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:weightSum="1"
+                                android:layout_gravity="right">
+
+                                <FrameLayout
+                                    android:layout_width="30dp"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1"></FrameLayout>
+
+                                <FrameLayout
+                                    android:layout_width="50dp"
+                                    android:layout_height="fill_parent"
+                                    android:layout_gravity="right"
+                                    android:paddingRight="5dp">
+
+                                    <TextView
+                                        android:layout_width="50dp"
+                                        android:layout_height="match_parent"
+                                        android:text="今天"
+                                        android:id="@+id/set_date_today"
+                                        android:layout_gravity="center"
+                                        android:gravity="center"
+                                        android:paddingLeft="0dp"
+                                        android:background="#420f0f0f" />
+                                </FrameLayout>
+                            </LinearLayout>
+
+                        </FrameLayout>
+
+                    </LinearLayout>
+
+                </FrameLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_gravity="bottom">
+
+                <FrameLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:paddingTop="2dp"
+                    android:paddingBottom="2dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:text="    事由"
+                        android:id="@+id/textView3"
+                        android:layout_gravity="bottom"
+                        android:gravity="center"
+                        android:textSize="12dp" />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp">
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:id="@+id/home_input_reason"
+                        android:textSize="16dp"
+                        android:layout_marginBottom="0dp"
+                        android:layout_margin="0dp"
+                        android:singleLine="true"
+                        android:text="待记录"
+                        android:layout_gravity="center"
+                        android:background="#fffffff0" />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:paddingBottom="2dp">
+
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent">
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="81dp"
+                        android:weightSum="1"
+                        android:paddingTop="10dp">
+
+                        <FrameLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="10dp"
+                            android:layout_gravity="left">
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_gravity="left">
+
+                                <FrameLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="25dp">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="20dp"
+                                        android:text="金额"
+                                        android:id="@+id/textView4"
+                                        android:gravity="center"
+                                        android:textSize="16dp" />
+                                </FrameLayout>
+
+                                <Button
+                                    android:layout_width="50dp"
+                                    android:layout_height="50dp"
+                                    android:text="支"
+                                    android:id="@+id/home_choose_mode"
+                                    android:layout_gravity="bottom|right"
+                                    android:textColor="#ffffffff"
+                                    android:background="#ffff1521"
+                                    android:gravity="center"
+                                    android:textStyle="bold"
+                                    android:textSize="18dp" />
+                            </LinearLayout>
+
+                        </FrameLayout>
+
+                        <FrameLayout
+                            android:layout_width="200dp"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="10dp"
+                            android:layout_gravity="bottom"
+                            android:paddingRight="5dp">
+
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="200dp"
+                                android:layout_height="70dp"
+                                android:layout_gravity="bottom">
+
+                                <EditText
+                                    android:layout_width="130dp"
+                                    android:layout_height="fill_parent"
+                                    android:inputType="number"
+                                    android:ems="10"
+                                    android:id="@+id/home_input_money"
+                                    android:textSize="42dp"
+                                    android:layout_marginBottom="0dp"
+                                    android:singleLine="true"
+                                    android:layout_gravity="bottom"
+                                    android:gravity="bottom|right"
+                                    android:background="#fff9fffd"
+                                    android:textColor="#ffff2115"
+                                    android:text="0"
+                                    android:enabled="false"
+                                    android:maxLength="5" />
+
+                                <FrameLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="fill_parent">
+
+                                    <LinearLayout
+                                        android:orientation="vertical"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="fill_parent">
+
+                                        <LinearLayout
+                                            android:orientation="horizontal"
+                                            android:layout_width="fill_parent"
+                                            android:layout_height="wrap_content"
+                                            android:background="#fff9fffd">
+
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:text="+"
+                                                android:id="@+id/add_sign"
+                                                android:textSize="20dp"
+                                                android:textColor="#ff744f02"
+                                                android:textStyle="bold"
+                                                android:visibility="invisible" />
+
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:text="0"
+                                                android:id="@+id/extra_money"
+                                                android:textColor="#ff744f02"
+                                                android:textStyle="bold"
+                                                android:textSize="20dp"
+                                                android:maxLength="4"
+                                                android:visibility="invisible" />
+                                        </LinearLayout>
+
+                                        <FrameLayout
+                                            android:layout_width="fill_parent"
+                                            android:layout_height="fill_parent"
+                                            android:background="#fff9fffd">
+
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:text=".00"
+                                                android:id="@+id/float_money"
+                                                android:layout_gravity="bottom"
+                                                android:textSize="20dp"
+                                                android:textColor="#ffff1521" />
+                                        </FrameLayout>
+                                    </LinearLayout>
+                                </FrameLayout>
+                            </LinearLayout>
+
+                        </FrameLayout>
+
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="fill_parent"
+                            android:paddingLeft="5dp">
+
+                            <Button
+                                android:layout_width="65dp"
+                                android:layout_height="55dp"
+                                android:text="记下"
+                                android:id="@+id/submit_save"
+                                android:layout_gravity="bottom"
+                                android:textColor="#ffffffff"
+                                android:background="#ff744f02" />
+                        </FrameLayout>
+
+                    </LinearLayout>
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="15dp"></FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="250dp"
+                    android:paddingTop="15dp"
+                    android:layout_gravity="bottom"
+                    android:paddingLeft="12dp">
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_gravity="left|center">
+
+                        <FrameLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent">
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                                <FrameLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:padding="2dp">
+
+                                    <TextView
+                                        android:layout_width="80dp"
+                                        android:layout_height="50dp"
+                                        android:text="7"
+                                        android:id="@+id/money_7"
+                                        android:gravity="center"
+                                        android:background="#ff7c7c7c"
+                                        android:textColor="#ffffffff" />
+                                </FrameLayout>
+
+                                <FrameLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:padding="2dp">
+
+                                    <TextView
+                                        android:layout_width="80dp"
+                                        android:layout_height="50dp"
+                                        android:text="4"
+                                        android:id="@+id/money_4"
+                                        android:gravity="center"
+                                        android:background="#ff7c7c7c"
+                                        android:textColor="#ffffffff" />
+                                </FrameLayout>
+
+                                <FrameLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:padding="2dp">
+
+                                    <TextView
+                                        android:layout_width="80dp"
+                                        android:layout_height="50dp"
+                                        android:text="1"
+                                        android:id="@+id/money_1"
+                                        android:gravity="center"
+                                        android:background="#ff7c7c7c"
+                                        android:textColor="#ffffffff" />
+                                </FrameLayout>
+
+                                <FrameLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:padding="2dp">
+
+                                    <TextView
+                                        android:layout_width="80dp"
+                                        android:layout_height="50dp"
+                                        android:text="0"
+                                        android:id="@+id/money_0"
+                                        android:gravity="center"
+                                        android:background="#ff7c7c7c"
+                                        android:textColor="#ffffffff" />
+                                </FrameLayout>
+
+                            </LinearLayout>
+                        </FrameLayout>
+
+                        <FrameLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent">
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" >
+
+                                <FrameLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:padding="2dp" >
+
+                                    <TextView
+                                        android:layout_width="80dp"
+                                        android:layout_height="50dp"
+                                        android:text="8"
+                                        android:id="@+id/money_8"
+                                        android:gravity="center"
+                                        android:background="#ff7c7c7c"
+                                        android:textColor="#ffffffff" />
+                                </FrameLayout>
+
+                                <FrameLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:padding="2dp" >
+
+                                    <TextView
+                                        android:layout_width="80dp"
+                                        android:layout_height="50dp"
+                                        android:text="5"
+                                        android:id="@+id/money_5"
+                                        android:gravity="center"
+                                        android:background="#ff7c7c7c"
+                                        android:textColor="#ffffffff" />
+                                </FrameLayout>
+
+                                <FrameLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:padding="2dp" >
+
+                                    <TextView
+                                        android:layout_width="80dp"
+                                        android:layout_height="50dp"
+                                        android:text="2"
+                                        android:id="@+id/money_2"
+                                        android:gravity="center"
+                                        android:background="#ff7c7c7c"
+                                        android:textColor="#ffffffff" />
+                                </FrameLayout>
+
+                                <FrameLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:padding="2dp" >
+
+                                    <TextView
+                                        android:layout_width="80dp"
+                                        android:layout_height="50dp"
+                                        android:text="10"
+                                        android:id="@+id/money_10"
+                                        android:gravity="center"
+                                        android:background="#ff7c7c7c"
+                                        android:textColor="#ffffffff" />
+                                </FrameLayout>
+                            </LinearLayout>
+                        </FrameLayout>
+
+                        <FrameLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent">
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" >
+
+                                <FrameLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:padding="2dp" >
+
+                                    <TextView
+                                        android:layout_width="80dp"
+                                        android:layout_height="50dp"
+                                        android:text="9"
+                                        android:id="@+id/money_9"
+                                        android:gravity="center"
+                                        android:background="#ff7c7c7c"
+                                        android:textColor="#ffffffff" />
+                                </FrameLayout>
+
+                                <FrameLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:padding="2dp" >
+
+                                    <TextView
+                                        android:layout_width="80dp"
+                                        android:layout_height="50dp"
+                                        android:text="6"
+                                        android:id="@+id/money_6"
+                                        android:gravity="center"
+                                        android:background="#ff7c7c7c"
+                                        android:textColor="#ffffffff" />
+                                </FrameLayout>
+
+                                <FrameLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:padding="2dp" >
+
+                                    <TextView
+                                        android:layout_width="80dp"
+                                        android:layout_height="50dp"
+                                        android:text="3"
+                                        android:id="@+id/money_3"
+                                        android:gravity="center"
+                                        android:background="#ff7c7c7c"
+                                        android:textColor="#ffffffff" />
+                                </FrameLayout>
+
+                                <FrameLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:padding="2dp" >
+
+                                    <TextView
+                                        android:layout_width="80dp"
+                                        android:layout_height="50dp"
+                                        android:text="20"
+                                        android:id="@+id/money_20"
+                                        android:gravity="center"
+                                        android:background="#ff7c7c7c"
+                                        android:textColor="#ffffffff" />
+                                </FrameLayout>
+                            </LinearLayout>
+                        </FrameLayout>
+
+                        <FrameLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent">
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" >
+
+                                <FrameLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:padding="2dp" >
+
+                                    <LinearLayout
+                                        android:orientation="vertical"
+                                        android:layout_width="80dp"
+                                        android:layout_height="fill_parent">
+
+                                        <TextView
+                                            android:layout_width="fill_parent"
+                                            android:layout_height="20dp"
+                                            android:text="吃饭"
+                                            android:id="@+id/recent_second_common_moneyReason"
+                                            android:gravity="center"
+                                            android:textColor="#ffffffff"
+                                            android:background="#ff3076b6" />
+
+                                        <TextView
+                                            android:layout_width="80dp"
+                                            android:layout_height="30dp"
+                                            android:text="7"
+                                            android:id="@+id/recent_second_common_money"
+                                            android:gravity="center"
+                                            android:background="#ff7c7c7c"
+                                            android:textColor="#ffffffff" />
+                                    </LinearLayout>
+                                </FrameLayout>
+
+                                <FrameLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:padding="2dp" >
+
+                                    <LinearLayout
+                                        android:orientation="vertical"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="fill_parent">
+
+                                        <TextView
+                                            android:layout_width="fill_parent"
+                                            android:layout_height="20dp"
+                                            android:text="出租车"
+                                            android:id="@+id/recent_first_common_moneyReason"
+                                            android:gravity="center"
+                                            android:textColor="#ffffffff"
+                                            android:background="#ff3076b6" />
+
+                                        <TextView
+                                            android:layout_width="80dp"
+                                            android:layout_height="30dp"
+                                            android:text="4"
+                                            android:id="@+id/recent_first_common_money"
+                                            android:gravity="center"
+                                            android:background="#ff7c7c7c"
+                                            android:textColor="#ffffffff" />
+
+                                    </LinearLayout>
+                                </FrameLayout>
+
+                                <FrameLayout
+                                    android:layout_width="80dp"
+                                    android:layout_height="fill_parent"
+                                    android:padding="2dp" >
+
+                                    <TextView
+                                        android:layout_width="80dp"
+                                        android:layout_height="50dp"
+                                        android:text="C"
+                                        android:id="@+id/money_reset"
+                                        android:gravity="center"
+                                        android:background="#ff7c7c7c"
+                                        android:textColor="#ffffffff" />
+                                </FrameLayout>
+
+                                <FrameLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:padding="2dp" >
+
+                                    <TextView
+                                        android:layout_width="80dp"
+                                        android:layout_height="50dp"
+                                        android:text="+"
+                                        android:id="@+id/money_add"
+                                        android:gravity="center"
+                                        android:background="#ff7c7c7c"
+                                        android:textColor="#ffffffff" />
+                                </FrameLayout>
+                            </LinearLayout>
+                        </FrameLayout>
+                    </LinearLayout>
+                </FrameLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </FrameLayout>
+
+</RelativeLayout>

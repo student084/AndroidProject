@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#ff979797">
+
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="35dp"
+            android:text="编辑"
+            android:id="@+id/edit_history"
+            android:padding="0dp"
+            android:background="#ff464646"
+            android:textColor="#ffffffff" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView6"
+            android:text=" " />
+
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="35dp"
+            android:text="删除"
+            android:id="@+id/delete_history"
+            android:padding="0dp"
+            android:background="#ff464646"
+            android:textColor="#ffffffff" />
+    </LinearLayout>
+</LinearLayout>

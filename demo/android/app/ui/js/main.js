@@ -50,7 +50,7 @@ export default class MainPage extends React.Component {
 	    	<View>
 	      	<RenderContent/>
 	      	</View>
-	      	<View>
+	      	<View >
 	      	<Text onPress={this._showDrawerMenu.bind(this)}>Press to Menu</Text>
 	      	</View>
 	    	</View>

@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">SLS60020_07_11</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_history_page">history_pageActivity</string>
+    <string name="title_activity_staff_information">staff_information</string>
+    <string name="title_activity_derive_page">derive_page</string>
+    <string name="title_activity_edit_accounts">edit_accounts</string>
+    <string name="title_activity_principal_page">principal_page</string>
+
+    <string-array name="spinner_select">
+        <item>——</item>
+        <item>导出</item>
+        <item>清空</item>
+    </string-array>
+</resources>
