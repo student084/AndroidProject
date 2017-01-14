@@ -23,6 +23,7 @@ import {
 	StyleSheet,
 	TextInput,
 	Image,
+	TouchableHighlight,
 	TouchableOpacity,
 }from 'react-native';
 import Drawer from './drawer';
@@ -55,12 +56,20 @@ export default class MainPage extends React.Component {
 				<View style={renderContentCss.picLayout}><Image style={renderContentCss.userImg} source={require('../img/student0.png')}/></View>
 				</TouchableOpacity>
 				<View style={renderContentCss.searchInputView}><TextInput/></View>
-				<View style={renderContentCss.searchButtonView}><Button title="Search" onPress={this._showDrawerMenu.bind(this)}/></View>
+				<TouchableOpacity><View style={renderContentCss.searchButtonView}><Image style={renderContentCss.userImg} source={require('../img/menu.png')}/></View></TouchableOpacity>
 			</View>
-			<View style={renderContentCss.center}></View>
+			<View style={renderContentCss.center}>
+				<Text> DEMO </Text>
+				<Text> An React Native Simple Demo </Text>
+			</View>
 			<View style={renderContentCss.contentLayout}></View>
 			</View>
-			<View style={renderContentCss.tableMenu}></View>
+			<View style={renderContentCss.tableMenu}>
+			<TouchableHighlight><View style={mainCss.tableChoose}><View><Image style={mainCss.tableImg} source={require('../img/recommend.png')}/></View><Text>推荐</Text></View></TouchableHighlight>
+			<TouchableHighlight><View style={mainCss.tableChoose}><View><Image style={mainCss.tableImg} source={require('../img/friend.png')}/></View><Text>聊天</Text></View></TouchableHighlight>
+			<TouchableHighlight><View style={mainCss.tableChoose}><View><Image style={mainCss.tableImg} source={require('../img/history.png')}/></View><Text>记录</Text></View></TouchableHighlight>
+			<TouchableHighlight><View style={mainCss.tableChoose}><View><Image style={mainCss.tableImg} source={require('../img/acount.png')}/></View><Text>管理</Text></View></TouchableHighlight>
+			</View>
 	    </DrawerLayoutAndroid>
 			);
 	}
@@ -117,16 +126,19 @@ renderContentCss = StyleSheet.create({
 		width: ScreenWidth * 0.2,
 		justifyContent: 'space-around',
 		alignItems: 'center',
+		backgroundColor: 'gainsboro',
 	},
 	searchInputView:{
 		height: ScreenHeight * 0.08,
 		width: ScreenWidth * 0.45,
+		backgroundColor: 'gainsboro',
 	},
 	searchButtonView:{
 		height: ScreenHeight * 0.1,
 		width: ScreenWidth * 0.25,
 		justifyContent: 'center',
 		alignItems: 'center',
+		backgroundColor: 'gainsboro',
 	},
 	headWithSearch:{
 		height: ScreenHeight * 0.1,
@@ -134,19 +146,30 @@ renderContentCss = StyleSheet.create({
 		flexDirection: 'row',
 		justifyContent: 'space-between',
 		alignItems: 'center',
+		backgroundColor: 'gainsboro',
 	},
 	center:{
 		width: ScreenWidth,
 		height: ScreenHeight * 0.1,
-		backgroundColor: 'red',
+		backgroundColor: 'gainsboro',
+		justifyContent: 'space-around',
+		alignItems: 'center',
 	},
 	contentLayout:{
 		height: 0.67 * ScreenHeight,
 		width: ScreenWidth,
 	},
 	tableMenu:{
+		paddingTop: 5, 
 		width: ScreenWidth,
 		height: ScreenHeight * 0.13,
+		backgroundColor: 'lavender',
+		flexDirection: 'row',
+		justifyContent: 'flex-start',
+		borderStyle: 'solid',
+  		borderWidth: 1,
+  		borderLeftColor: 'lavender',
+  		borderRightColor: 'lavender',
 	},
 	userImg:{
 		borderRadius: ScreenHeight * 0.04,
@@ -163,5 +186,16 @@ mainCss = StyleSheet.create({
     width:80,  
     marginTop:40,  
     alignSelf:'center',
+  },
+  tableChoose:{
+  	width: ScreenWidth * 0.25,
+  	height: ScreenHeight * 0.1,
+  	justifyContent: 'flex-start',
+  	alignItems: 'center',
+  },
+  tableImg:{
+	height: 25,
+	width: 25,  
+	alignSelf:'center',
   },
 });
