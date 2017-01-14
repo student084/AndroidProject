@@ -27,7 +27,7 @@ import {
 	TouchableOpacity,
 }from 'react-native';
 import Drawer from './drawer';
-
+import Recommend from './turnPages';
 export default class MainPage extends React.Component {
 	constructor(props){
 		super(props);
@@ -55,20 +55,19 @@ export default class MainPage extends React.Component {
 			 <TouchableOpacity onPress={this._showDrawerMenu.bind(this)}>
 				<View style={renderContentCss.picLayout}><Image style={renderContentCss.userImg} source={require('../img/student0.png')}/></View>
 				</TouchableOpacity>
-				<View style={renderContentCss.searchInputView}><TextInput/></View>
-				<TouchableOpacity><View style={renderContentCss.searchButtonView}><Image style={renderContentCss.userImg} source={require('../img/menu.png')}/></View></TouchableOpacity>
+				<View style={renderContentCss.searchInputView}></View>
+				<TouchableOpacity><View style={renderContentCss.searchButtonView}><Image style={renderContentCss.userImg} source={require('../img/aboutUs.png')}/></View></TouchableOpacity>
 			</View>
-			<View style={renderContentCss.center}>
-				<Text> DEMO </Text>
-				<Text> An React Native Simple Demo </Text>
+			<View style={renderContentCss.contentLayout}>
+				<Recommend/>
 			</View>
-			<View style={renderContentCss.contentLayout}></View>
 			</View>
+			
 			<View style={renderContentCss.tableMenu}>
-			<TouchableHighlight><View style={mainCss.tableChoose}><View><Image style={mainCss.tableImg} source={require('../img/recommend.png')}/></View><Text>推荐</Text></View></TouchableHighlight>
-			<TouchableHighlight><View style={mainCss.tableChoose}><View><Image style={mainCss.tableImg} source={require('../img/friend.png')}/></View><Text>聊天</Text></View></TouchableHighlight>
-			<TouchableHighlight><View style={mainCss.tableChoose}><View><Image style={mainCss.tableImg} source={require('../img/history.png')}/></View><Text>记录</Text></View></TouchableHighlight>
-			<TouchableHighlight><View style={mainCss.tableChoose}><View><Image style={mainCss.tableImg} source={require('../img/acount.png')}/></View><Text>管理</Text></View></TouchableHighlight>
+				<TouchableHighlight><View style={mainCss.tableChoose}><View><Image style={mainCss.tableImg} source={require('../img/recommend.png')}/></View><Text>推荐</Text></View></TouchableHighlight>
+				<TouchableHighlight><View style={mainCss.tableChoose}><View><Image style={mainCss.tableImg} source={require('../img/friend.png')}/></View><Text>聊天</Text></View></TouchableHighlight>
+				<TouchableHighlight><View style={mainCss.tableChoose}><View><Image style={mainCss.tableImg} source={require('../img/history.png')}/></View><Text>记录</Text></View></TouchableHighlight>
+				<TouchableHighlight><View style={mainCss.tableChoose}><View><Image style={mainCss.tableImg} source={require('../img/acount.png')}/></View><Text>管理</Text></View></TouchableHighlight>
 			</View>
 	    </DrawerLayoutAndroid>
 			);
@@ -91,11 +90,11 @@ class LeftListMenu extends Component{
                     source={require('../img/student0.png')}
                     />
 			</View>
-			<View style={{flex: 4, alignItems: 'flex-start'}}>
-          		<Text style={{margin: 10, fontSize: 15, textAlign: 'right'}}>选项一</Text>
-          		<Text style={{margin: 10, fontSize: 15, textAlign: 'right'}}>选项二</Text>
-          		<Text style={{margin: 10, fontSize: 15, textAlign: 'right'}}>选项三</Text>
-          		<Text style={{margin: 10, fontSize: 15, textAlign: 'right'}}>选项四</Text>
+			<View style={{flex: 4, alignItems: 'flex-start', marginTop: 20, paddingLeft: 20}}>
+          		<TouchableOpacity><View><Text style={{margin: 10, fontSize: 15, textAlign: 'right'}}>超级会员</Text></View></TouchableOpacity>
+          		<TouchableOpacity><View><Text style={{margin: 10, fontSize: 15, textAlign: 'right'}}>个人信息</Text></View></TouchableOpacity>
+          		<TouchableOpacity><View><Text style={{margin: 10, fontSize: 15, textAlign: 'right'}}>最新活动</Text></View></TouchableOpacity>
+          		<TouchableOpacity><View><Text style={{margin: 10, fontSize: 15, textAlign: 'right'}}>安全退出</Text></View></TouchableOpacity>
 			</View>
 		</View>
 		);
@@ -156,7 +155,7 @@ renderContentCss = StyleSheet.create({
 		alignItems: 'center',
 	},
 	contentLayout:{
-		height: 0.67 * ScreenHeight,
+		height: 0.77 * ScreenHeight,
 		width: ScreenWidth,
 	},
 	tableMenu:{
@@ -165,7 +164,7 @@ renderContentCss = StyleSheet.create({
 		height: ScreenHeight * 0.13,
 		backgroundColor: 'lavender',
 		flexDirection: 'row',
-		justifyContent: 'flex-start',
+		justifyContent: 'flex-end',
 		borderStyle: 'solid',
   		borderWidth: 1,
   		borderLeftColor: 'lavender',
