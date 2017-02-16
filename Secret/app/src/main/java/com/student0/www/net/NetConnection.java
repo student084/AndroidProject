@@ -47,8 +47,7 @@ public class NetConnection {
                             urlConnection = new URL(url + "?" +paramsStr.toString()).openConnection();
                             break;
                     }
-                    Log.i("1232",urlConnection.getURL().toString());
-                    Log.i("12332",paramsStr.toString());
+
                     System.out.println("Request url:" + urlConnection.getURL());
                     System.out.println("Request data:" + paramsStr);
                     BufferedReader br = new BufferedReader(new InputStreamReader(urlConnection.getInputStream(), Config.CHARSET));
