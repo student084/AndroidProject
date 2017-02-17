@@ -3,13 +3,15 @@ package com.student0.www.secret;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import java.security.PublicKey;
+
 /**
  * Created by willj on 2017/2/16.
  */
 
 public class Config {
 
-    public static final String KEY_TOKEN = "token";
+
     public static final String APP_ID = "com.student0.secret";
     public static final String CHARSET= "UTF-8";
     //http://demo.eoeschool.com/api/v1/nimings/io
@@ -17,17 +19,21 @@ public class Config {
 
     public static final int RESULT_STATUS_SUCCESS = 1;
     public static final int RESULT_STATUS_FAIL = 0;
+
     //TOKEN timeout
     public static final int RESULT_STATUS_INVALID_TOKEN = 2;
     public static final String KEY_CODE = "code";
     public static final String KEY_STATUS = "status";
-    public static final String ACTION_GET_CODE = "send_pass";
     public static final String KEY_ACTION = "action";
+    public static final String KEY_TOKEN = "token";
+
     public static final String KEY_PHONE_MD5 = "phone_md5";
     public static final String KEY_PHONE_NUM = "phone";
+    public static final String KEY_CONTACTS = "contacts";
 
     public static final String ACTION_LOGIN = "login";
-
+    public static final String ACTION_GET_CODE = "send_pass";
+    public static final String ACTION_UPLOAD_CONTACTS = "upload_contacts";
 
     public static String getCachedToken(Context context){
         return context.getSharedPreferences(APP_ID, Context.MODE_PRIVATE).getString(KEY_TOKEN, null);
