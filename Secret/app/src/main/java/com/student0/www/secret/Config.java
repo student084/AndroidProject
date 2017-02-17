@@ -13,7 +13,7 @@ public class Config {
     public static final String APP_ID = "com.student0.secret";
     public static final String CHARSET= "UTF-8";
     //http://demo.eoeschool.com/api/v1/nimings/io
-    public static final String SERVER_URL = "http://10.75.82.4:8080/Server/servlet/Test";
+    public static final String SERVER_URL = "http://10.60.0.164:8080/Server/servlet/Test";
 
     public static final int RESULT_STATUS_SUCCESS = 1;
     public static final int RESULT_STATUS_FAIL = 0;
