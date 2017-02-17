@@ -64,6 +64,7 @@ public class AtyLogin extends Activity {
                    return;
                }
 
+               final ProgressDialog progressDialog = ProgressDialog.show(AtyLogin.this, getResources().getString(R.string.connecting), getResources().getString(R.string.connecting_to_server));
                new Login(MD5Tool.md5(etPhone.getText().toString()), etCode.getText().toString(), new Login.SuccessCallback() {
                    @Override
                    public void onSuccess(String token) {
@@ -73,12 +74,14 @@ public class AtyLogin extends Activity {
                        Intent i = new Intent(AtyLogin.this, AtyTimeLine.class);
                        i.putExtra(Config.KEY_TOKEN, token);
                        i.putExtra(Config.KEY_PHONE_NUM, etPhone.getText().toString());
+                       progressDialog.dismiss();
                        startActivity(i);
                        finish();
                    }
                }, new Login.FailCallback() {
                    @Override
                    public void onFail() {
+                       progressDialog.dismiss();
                        Toast.makeText(AtyLogin.this, R.string.fail_to_login, Toast.LENGTH_LONG).show();
                    }
                });

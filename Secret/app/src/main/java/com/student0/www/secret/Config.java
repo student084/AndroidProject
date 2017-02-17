@@ -26,18 +26,23 @@ public class Config {
     public static final String KEY_STATUS = "status";
     public static final String KEY_ACTION = "action";
     public static final String KEY_TOKEN = "token";
-
+    public static final String KEY_COMMENTS = "comments";
     public static final String KEY_PHONE_MD5 = "phone_md5";
     public static final String KEY_PHONE_NUM = "phone";
     public static final String KEY_CONTACTS = "contacts";
     public static final String KEY_PAGE = "page";
     public static final String KEY_PERPAGE = "perpage";
     public static final String KEY_TIMELINE = "timeline";
+    public static final String KEY_MSG_ID = "msgId";
+    public static final String KEY_MSG = "msg";
+    public static final String KEY_CONTENT = "content";
 
+    public static final String ACTION_COMMENT = "get_comment";
     public static final String ACTION_LOGIN = "login";
     public static final String ACTION_GET_CODE = "send_pass";
     public static final String ACTION_UPLOAD_CONTACTS = "upload_contacts";
     public static final String ACTION_TIMELINE = "timeline";
+
 
 
     public static String getCachedToken(Context context){
