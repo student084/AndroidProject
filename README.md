@@ -1,9 +1,9 @@
-# AndroidProject
+# React Native
 <h2>文档说明</h2>
 <hr>
 <ul>
 <li>所有权保留；</li>
-<li>代码库为RN(React Native) 及原生Android项目代码，笔者学习记录；</li>
+<li>代码库为RN(React Native)，笔者学习记录；</li>
 <li>代码开源，可免费供游客浏览或下载；</li>
 <li>请勿作为商业用途使用；</li>
 <li>欢迎车友交流学习；</li>

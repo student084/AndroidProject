@@ -39,6 +39,9 @@ public class Config {
     public final static int STATUS_INVALID_TOKEN = 2;
 
 
+    public final static int PHOTO_WIDTH = 200;
+    public final static int PHOTO_HEIGHT = 200;
+
     public String getCacheToken(Context context){
         return context.getSharedPreferences(APP_ID, Context.MODE_PRIVATE).getString(KEY_TOKEN, null);
     }

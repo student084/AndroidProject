@@ -5,12 +5,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.student0.www.tools.FlowLayout
-    android:id="@+id/id_flowlayout"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:paddingLeft="5dp"
-    android:paddingTop="10dp">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
 
-    </com.student0.www.tools.FlowLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/box_content_all">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="hello"/>
+            <com.student0.www.tools.FlowLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/flowlayout_photos_box"></com.student0.www.tools.FlowLayout>
+        </LinearLayout>
+    </ScrollView>
 </RelativeLayout>

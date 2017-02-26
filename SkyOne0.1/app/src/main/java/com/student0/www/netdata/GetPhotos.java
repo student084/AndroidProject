@@ -1,6 +1,6 @@
 package com.student0.www.netdata;
 
-import com.student0.www.bean.Picture;
+import com.student0.www.bean.Photo;
 import com.student0.www.config.Config;
 import com.student0.www.net.HttpMethod;
 import com.student0.www.net.NetConnection;
@@ -26,12 +26,12 @@ public class GetPhotos {
                     switch (jsonObject.getInt(Config.KEY_STATUS)){
                         case Config.STATUS_SUCCESS:
                             if(successCallback != null) {
-                                List<Picture> picturesList = new ArrayList<Picture>();
+                                List<Photo> picturesList = new ArrayList<Photo>();
                                 JSONArray jsonArray = jsonObject.getJSONArray(Config.KEY_PICTURES);
                                 JSONObject pictureJSONObject;
                                 for (int i = 0; i < jsonArray.length(); i++) {
                                     pictureJSONObject = jsonArray.getJSONObject(i);
-                                    picturesList.add(new Picture(pictureJSONObject.getString(Config.KEY_PICTURE_DATE), pictureJSONObject.getString(Config.KEY_PICTURE_RESOURCE), pictureJSONObject.getInt(Config.KEY_PICTURE_ID)));
+                                    picturesList.add(new Photo(pictureJSONObject.getString(Config.KEY_PICTURE_DATE), pictureJSONObject.getString(Config.KEY_PICTURE_RESOURCE), pictureJSONObject.getInt(Config.KEY_PICTURE_ID)));
                                 }
                                 successCallback.onSuccess(picturesList);
                             }
@@ -67,7 +67,7 @@ public class GetPhotos {
     }
 
     public interface SuccessCallback{
-        void onSuccess(List<Picture> picturesList);
+        void onSuccess(List<Photo> picturesList);
     }
 
     public interface FailCallback{
